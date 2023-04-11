@@ -8,6 +8,7 @@
     import Menu from '../$layouts/menu.svelte'
     import Modal from '../$components/modal.svelte'
     import Dropdown from '../$components/dropdown.svelte'
+    import Card from '../$components/card.svelte'
 
     import UserRead from '../users/user.read.svelte'
     import UserUpdatePassword from '../users/user.update.password.svelte'
@@ -31,45 +32,31 @@
 </script>
 
 <style>
-    .content p{
-        font-size: 4rem;
-        margin: 0;
-        text-align: center;
-    }
+    
 </style>
 
 <Menu path={ currentRoute.path }>
     <div on:change={getInformation} class="columns">
         <section class="column is-two-fifths">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        {#if $UserStore}  
-                        <p><i class="fas fa-user-circle fa-lg"></i></p> 
-                        <div class="dropread">
-                            <Dropdown icon="cog" color="white" isRight options={[
-                                {value: 'edit', text: 'Editar', click: () => UserStore.modalUpdate()},
-                                "divider",
-                                {value: 'editPassword', text: 'Editar Contaseña', click: () => UserStore.modalOpen('UpdatePassword')}
-                            ]} />
-                        </div>
-                        <UserRead/>
-                        {/if}
+                {#if $UserStore}  
+                <Card icon="user-circle fa-lg">
+                    <div class="dropread">
+                        <Dropdown icon="cog" color="white" isRight options={[
+                            {value: 'edit', text: 'Editar', click: () => UserStore.modalUpdate()},
+                            "divider",
+                            {value: 'editPassword', text: 'Editar Contaseña', click: () => UserStore.modalOpen('UpdatePassword')}
+                        ]} />
                     </div>
-                </div>
-              </div>
+                    <UserRead/>
+                </Card>
+                {/if}
         </section>
-        <section class="column is-three-fifths">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        {#if $HomeStore}  
-                        <p><i class="fas fa-home fa-lg"></i></p> 
-                        <HomeRead/>
-                        {/if}
-                    </div>
-                </div>
-              </div>
+        <section class="column is-three-fifths">    
+            {#if $HomeStore}  
+            <Card icon="home fa-lg">
+                <HomeRead/>
+            </Card>
+            {/if}
         </section>
     </div>    
   

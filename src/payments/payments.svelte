@@ -34,7 +34,6 @@
 </script>
 
 <Search on:enter={ getPayments } bind:value={ query.find } >
-    <Button on:click={() => PaymentStore.modalCreate()} text="Agregar" icon="plus" color="primary" />
 </Search>
 
 <Table bind:query items={ $PaymentsStore.length } on:change={ getPayments } { metadata } { loading }>

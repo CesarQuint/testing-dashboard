@@ -1,6 +1,6 @@
 <script>
 
-    import { createEventDispatcher } from 'svelte'
+    import { createEventDispatcher, onMount } from 'svelte'
     import { PaymentStore, PaymentsStore, ToastStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
@@ -11,14 +11,18 @@
 
     const dispatch = createEventDispatcher()
 
+    onMount(()=>{
+       if($PaymentStore.status != 'Pendiente...'){
+           dispatch('canceled') 
+           return ToastStore.error({message:"No se puede editar el pago en este estado"})
+       }
+            
+    })
+
     let loading = false
     let data = {
-        homeId: $PaymentStore.homeId,
-        concept: $PaymentStore.concept,
         reference: $PaymentStore.reference,
-        paymentphoto: $PaymentStore.paymentphoto,
-        amount: $PaymentStore.amount,
-        status:$PaymentStore.status
+        paymentphoto: $PaymentStore.paymentphoto
     }
 
     async function updatePayment() {
@@ -41,20 +45,9 @@
 
 <Form on:submit={ updatePayment } on:canceled { loading } >
     <div class="columns">
-        <Input bind:value={ data.concept } label="Concepto" icon="tag" placeholder="Ingrese el concepto" />
-    </div>
-    <div class="columns">
         <Input bind:value={ data.reference } label="Referencia" icon="tag" placeholder="Ingrese la referencia" />
     </div>
     <div class="columns">
         <Input bind:value={ data.paymentphoto } label="Foto de Pago" icon="tag" placeholder="Ingrese la foto" />
-    </div>
-    <div class="columns">
-        <Input bind:value={ data.amount } label="Cantidad" icon="dollar-sign" placeholder="Ingrese la referencia" type="number" />
-    </div>
-    <div class="columns">
-        <Dropdown bind:value={data.status} column text="Estatus de pago" options={[{text:"Pendiente",value:"Pendiente..."},
-                                                                                   {text:"Completado",value:"Completado"},
-                                                                                   {text:"Fallido",value:"Fallido"}]}/>
     </div>
 </Form>
