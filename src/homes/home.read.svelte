@@ -10,13 +10,6 @@
     <table class="table is-fullwidth">
         <tbody>
             <tr>
-                {#if $HomeStore.user }
-                    <th>Usuario</th>
-                    <td>{ $HomeStore.user.name }</td>
-                {/if}
-                
-            </tr>
-            <tr>
                 <th>Calle</th>
                 <td>{ $HomeStore.street }</td>
             </tr>

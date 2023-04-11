@@ -26,7 +26,7 @@
         if(response.error)
             return ToastStore.error(response.error)
 
-        UsersStore.replace(response.data)
+        UserStore.set(response.data)
 
         ToastStore.success('¡Usuario actualizado!')
         dispatch('updated')

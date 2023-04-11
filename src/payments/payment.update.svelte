@@ -24,7 +24,6 @@
     async function updatePayment() {
 
         loading = false
-        console.log(data);
         const response = await PaymentsService.updatePayment($PaymentStore._id, data)
         loading = true
 

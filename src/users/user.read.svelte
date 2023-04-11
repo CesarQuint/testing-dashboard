@@ -21,7 +21,6 @@
                 <th>Telefono</th>
                 <td>{ $UserStore.phone }</td>
             </tr>
-            <slot name="home"></slot>
             <tr>
                 <th>Fecha de registro</th>
                 <td>{ Utils.dateTimeLarge($UserStore.created) }</td>

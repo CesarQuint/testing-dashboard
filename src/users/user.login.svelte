@@ -1,9 +1,10 @@
 <script>
 
     import { navigateTo } from 'svelte-router-spa'
-    import { UserStore,ToastStore } from '../stores'
+    import { ToastStore } from '../stores'
 
     import UsersService from '../$services/users.service'
+    import HomesService from '../$services/homes.service'
     import Storage from '../storage'
 
     import Input from '../$components/input.svelte'
@@ -26,9 +27,6 @@
             return ToastStore.error(response.error)
 
         Storage.setItem('session', response.data)
-
-        const user = await UsersService.getUser(response.data.userId)
-        UserStore.set(user.data)
 
         navigateTo('home')
     }

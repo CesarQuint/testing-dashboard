@@ -4,6 +4,7 @@ export default {
     createHome,
     getHomes,
     getHome,
+    getHomeUser,
     updateHome,
     deleteHome,
 }
@@ -28,6 +29,13 @@ function getHome(homeId) {
     return API({
         method: 'get',
         route: `/homes/${ homeId }`,
+    })
+}
+
+function getHomeUser(userId) {
+    return API({
+        method: 'get',
+        route: `/homes/${ userId }/user`,
     })
 }
 
