@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+$primary: #8950F0;
+$background: #E7E7FB;
+$text: #121252;
+
+$card-radius: 24px;
+$box-radius: 24px;
+
+$table-background-color: white;
+$table-cell-border: 1px solid hsl(0, 0%, 94%);
+
+$input-border-color: hsl(0, 0%, 94%);
+$input-shadow: none;
+
+$modal-card-head-radius: 24px;
+$modal-card-head-background-color: white;
+$modal-card-head-border-bottom: none;
+
+$modal-card-foot-border-top: none;
+$modal-card-body-background-color: white;
+$modal-card-foot-radius: 24px;
+
+$dropdown-content-z:40;
+
+.field {
+    position: relative !important;
+}
+
+.label {
+    font-size: 14px !important;
+    font-weight: 200 !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    background: white !important;
+    left: 8px !important;
+    top: -16px !important;
+    padding: 4px !important;
+}
+
+input {
+    border-radius: 8px !important;
+}
+
+td {
+    cursor: pointer;
+}
+
+.select, .select select {
+    width: 100%;
+    border-radius: 8px !important;
+}
+
+.button {
+    border-radius: 8px !important;
+}
+
+.mt-2 {
+    margin-top: 0.5rem !important;
+}
+
+.mt-4 {
+    margin-top: 1rem !important;
+}
+
+.container.is-fluid {
+    max-width: none !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100%;
+}
+
+
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
