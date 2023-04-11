@@ -16,12 +16,9 @@
 
     import HomeRead from '../homes/home.read.svelte'
 
-    import { onMount } from 'svelte';
-
     export let currentRoute = null
 
-    onMount(getInformation)
-    
+
     async function getInformation(){
         let user = await UsersService.getUser($SessionStore.userId)
         let home = await HomesService.getHomeUser($SessionStore.userId)

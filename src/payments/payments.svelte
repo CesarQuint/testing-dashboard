@@ -14,8 +14,6 @@
     let query = { all: true }
     let metadata = {}
 
-    onMount(getPayments)
-
     async function getPayments() {
 
         loading = true
