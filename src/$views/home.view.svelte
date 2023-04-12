@@ -26,7 +26,7 @@
     div.column{
         overflow-y: auto;
         max-height: 45rem;
-
+        overflow-x: auto
     }
 </style>
 

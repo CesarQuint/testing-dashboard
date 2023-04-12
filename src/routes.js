@@ -4,6 +4,7 @@ import { SessionStore } from './stores'
 
 import _404View from './$views/404.view.svelte'
 import LoginView from './$views/login.view.svelte'
+import ForgotPassword from './$views/forgotpassword.view.svelte'
 import HomeView from './$views/home.view.svelte'
 import IndexView from './$views/index.view.svelte'
 import UserView from './$views/user.view.svelte'
@@ -51,6 +52,11 @@ const routes = [
     {
         name: '404',
         component: _404View
+    },
+    {
+        name: 'forgot-my-password',
+        component: ForgotPassword,
+        onlyIf: {guard: () => !isLogin(), redirect: 'home'}
     }
 ]
 

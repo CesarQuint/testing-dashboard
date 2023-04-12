@@ -12,8 +12,7 @@
 
     let loading = false
     let data = {
-        email: '',
-        password: ''
+        email: ''
     }
 
     async function userLogin() {
@@ -37,10 +36,7 @@
     <div class="columns">
         <Input bind:value={ data.email } label="Correo" icon="envelope" placeholder="Correo electronico" />
     </div>
-    <div class="columns">
-        <Input bind:value={ data.password } type="password" label="Contraseña" icon="lock" placeholder="• • • • • • • • • • • •" />
-    </div>
     <div slot="buttons">
-        <Button type="submit" icon="save" text="Iniciar sessión" color="primary" fullwidth />
+        <Button type="submit" icon="save" text="Mandar Correo" color="primary" fullwidth />
     </div>
 </Form>

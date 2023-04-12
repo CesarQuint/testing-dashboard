@@ -14,7 +14,8 @@ export default {
     dateLarge,
     dateTime,
     dateTimeLarge,
-    cash
+    cash,
+    relevance
 }
 
 function translate(value) {
@@ -43,4 +44,9 @@ function dateTimeLarge(date) {
 
 function cash(value) {
     return Numeral(value).format('$ 0,0.00')
+}
+
+function relevance(value){
+    let res = value - Date.now()
+    console.log(res);
 }

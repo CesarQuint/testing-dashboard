@@ -36,6 +36,20 @@ td {
   padding-right: 16px !important;
   width: 100%; }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; }
+
+::-webkit-scrollbar-thumb {
+  background: #8950F0; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6438b6; }
+
 /* Bulma Utilities */
 .button, .input, .textarea, .select select, .file-cta,
 .file-name, .pagination-previous,

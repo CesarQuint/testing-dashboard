@@ -2,7 +2,7 @@
   import { navigateTo } from 'svelte-router-spa';
 
 
-	import UserLogin from '../users/user.login.svelte'
+	import UserForgotPassword from '../users/user.forgotpassword.svelte'
 
 	let logIn = true
 
@@ -46,9 +46,10 @@
 	span{
 		color:rgb(125, 125, 218);
 	}
-	h1{
+	.title{
 		text-align: center;
 		text-align-last: center;
+        margin: 1rem 0 !important;
 	}
 	
 	.is-flex{
@@ -89,9 +90,10 @@
 						<div class="content mt-4">
 							<i class="fas fa-user-circle"></i>
 							<h1 class="title is-4">Administrador de <span>Pagos</span></h1>
-								<UserLogin/>
+                            <h2 class="title is-5">Recupera tu Contraseña</h2>
+								<UserForgotPassword/>
 								<div class="mt-4 is-flex">
-									<a on:click={()=>{navigateTo('forgot-my-password')}}>Olvide mi contraseña</a>
+									<a on:click={()=>{navigateTo('/')}}>Iniciar Sesion </a>
 								</div>
 						</div>
 					</div>
