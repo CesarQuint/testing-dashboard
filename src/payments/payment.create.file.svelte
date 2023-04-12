@@ -1,7 +1,7 @@
 <script>
 
     import { createEventDispatcher } from 'svelte'
-    import { SessionStore,PaymentsStore, ToastStore, TicketStore } from '../stores'
+    import { SessionStore,TicketsStore, ToastStore, TicketStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
 
@@ -53,16 +53,4 @@
     <div class="columns">
         <Input bind:value={ data.voucher } type="file" label="Comprobante" icon="tag" placeholder="Ingrese comprobante"/>
     </div>
-    <div slot="buttons">
-        <Button text="Continuar con el pago" icon="arrow-left" fullwidth />
-    </div>
-    <!-- 
-    
-    {#if data.paymentType === 'voucher'}
-       
-       
-    {/if}
-    {#if data.paymentType === 'card'}
-    
-    {/if} -->
 </Form>

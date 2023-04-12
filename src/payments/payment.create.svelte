@@ -1,7 +1,11 @@
 <script>
-   import {PaymentStore} from '../stores'
+   import {TicketStore} from '../stores'
 
-    import Button from '../$components/button.svelte'
+    import Select from '../$components/select.svelte'
+    import PaymentCard from './payment.create.card.svelte'
+    import PaymentVoucher from './payment.create.file.svelte'
+
+    let option = ''
 
 </script>
 
@@ -9,12 +13,14 @@
 
 <div class="columns">
     <div class="column">
-        <Button on:click={() => PaymentStore.modalOpen('CreateCard')} text="Pago con Tarjeta" size="medium" color="primary" icon="credit-card"/>
+       <Select bind:value={option} options={[{value:"card",text:"Tarjeta"},{value:"voucher",text:"Comprobante"}]}/>
     </div>
 </div>
 
-<div class="columns">
-    <div class="column">
-        <Button on:click={() => PaymentStore.modalOpen('CreateFile')} light text="Pago con Comprobante de pago" size="medium" color="primary" icon="file-invoice-dollar"/>
-    </div>
-</div>
+{#if option == 'voucher'}
+    <PaymentVoucher/>
+{/if}
+
+{#if option == 'card'}
+    <PaymentCard/>
+{/if}

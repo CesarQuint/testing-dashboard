@@ -6,6 +6,7 @@
     import PaymentsService from '../$services/payments.service'
 
     import Input from '../$components/input.svelte'
+    import Button from '../$components/button.svelte'
     import Form from '../$components/form.svelte'
 
     import HomesService from '../$services/homes.service'
@@ -36,4 +37,8 @@
 
 </script>
 
-<h1>Esto sera tarjeta</h1>
+<Form>
+    <div slot="buttons">
+        <Button text="Continuar con el pago" icon="arrow-right" fullwidth />
+    </div>
+</Form>

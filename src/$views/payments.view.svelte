@@ -7,9 +7,7 @@
 
     import Payments from '../payments/payments.svelte'
     import PaymentRead from '../payments/payment.read.svelte'
-    import PaymentCreate from '../payments/payment.create.svelte'
-    import PaymentCreateCard from '../payments/payment.create.card.svelte'
-    import PaymentCreateFile from '../payments/payment.create.file.svelte'
+
     import PaymentUpdate from '../payments/payment.update.svelte'
     import PaymentDelete from '../payments/payment.delete.svelte'
 
@@ -28,19 +26,6 @@
         ]} />
     </div>
     <PaymentRead />
-</Modal>
-
-<Modal id="PaymentCreate" title="Crear" >
-    <PaymentCreate on:created={() => PaymentStore.modalClose()} on:canceled={() => PaymentStore.modalClose()} />
-</Modal>
-
-
-<Modal id="PaymentCreateCard" title="Pago con tarjeta" >
-    <PaymentCreateCard on:created={() => PaymentStore.modalClose()} on:canceled={() => PaymentStore.modalClose()} />
-</Modal>
-
-<Modal id="PaymentCreateFile" title="Pago con conprobante" >
-    <PaymentCreateFile on:created={() => PaymentStore.modalClose()} on:canceled={() => PaymentStore.modalClose()} />
 </Modal>
 
 <Modal id="PaymentUpdate" title="Editar" >

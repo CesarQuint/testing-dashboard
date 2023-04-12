@@ -28,7 +28,7 @@
 
         NotificationsStore.set(response.data.notifications)
         metadata = response.data.metadata
-
+        console.log(response);
     }
 
 </script>
@@ -39,19 +39,12 @@
     }
 </style>
 
-<Search on:enter={ getNotifications } bind:value={ query.find } >
-    <Button on:click={() => NotificationStore.modalCreate()} text="Agregar" icon="plus" color="primary" />
-</Search>
-
 <Table bind:query items={ $NotificationsStore.length } on:change={ getNotifications } { metadata } { loading }>
     <thead>
-        <th>#</th>
-        <th>Notificacion</th>
     </thead>
     <tbody>
         {#each $NotificationsStore as Notification, index}
             <tr on:click={() => NotificationStore.modalRead(Notification)}>
-                <td>{ (index+1) + ( metadata.page * metadata.limit ) }</td>
                 <td>
                     <NotificationComp 
                     isLight

@@ -11,7 +11,7 @@
     import Button from '../$components/button.svelte'
 
     let loading = false 
-    let query = { all: true }
+    let query = {}
     let metadata = {}
 
     async function getPayments() {
