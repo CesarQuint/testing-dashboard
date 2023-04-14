@@ -12,7 +12,7 @@
     const dispatch = createEventDispatcher()
 
     onMount(()=>{
-       if($PaymentStore.status != 'Pendiente...'){
+       if($PaymentStore.status != 'pending'){
            dispatch('canceled') 
            return ToastStore.error({message:"No se puede editar el pago en este estado"})
        }

@@ -19,7 +19,8 @@ async function createPayment(data){
     return API({
         method:'post',
         route:'/payments',
-        data
+        data,
+        isForm: true
     })
 }
 

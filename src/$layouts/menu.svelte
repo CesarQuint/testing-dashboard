@@ -19,12 +19,11 @@
 
         loading = true
         const response = await SessionsService.verifySession($SessionStore.token)
-        let user = await UsersService.getUser($SessionStore.userId)
-        let home = await HomesService.getHomeUser($SessionStore.userId)
+        const user = await UsersService.getUser($SessionStore.userId)
+        const home = await HomesService.getHomeUser($SessionStore.userId)
         loading = false
 
-        if(response.success)
-        {
+        if(response.success){
             UserStore.set(user.data)
             HomeStore.set(home.data)
             return SessionStore.set(response.data)

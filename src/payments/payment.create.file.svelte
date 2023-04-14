@@ -1,15 +1,15 @@
 <script>
 
     import { createEventDispatcher } from 'svelte'
-    import { SessionStore,TicketsStore, ToastStore, TicketStore } from '../stores'
+    import { SessionStore,PaymentsStore, ToastStore, TicketStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
 
     import Input from '../$components/input.svelte'
     import Form from '../$components/form.svelte'
-    import Button from '../$components/button.svelte'
 
     import HomesService from '../$services/homes.service'
+    import TicketsService from '../$services/tickets.service'
 
     const dispatch = createEventDispatcher()
 
@@ -21,12 +21,15 @@
 
     async function createPayment() {
 
+        console.log(data);
+
         let home= await HomesService.getHomeUser($SessionStore.userId)
 
         data.homeId = home.data._id
     
         loading = true
         const response = await PaymentsService.createPayment(data)
+        await TicketsService.updateTicket($TicketStore._id,{homes:[home.data._id]})
         loading = false
 
         if(response.error)

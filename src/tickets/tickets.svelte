@@ -1,19 +1,17 @@
 <script>
 
     import { onMount } from 'svelte'
-    import { PaymentStore,UserStore,TicketsStore, TicketStore, ToastStore } from '../stores'
+    import { PaymentStore,UserStore,TicketsStore, TicketStore, ToastStore,HomeStore,SessionStore } from '../stores'
 
     import TicketsService from '../$services/tickets.service.js'
+    import HomesService from '../$services/homes.service'
     import Utils from '../utils'
 
     import Table from '../$components/table.svelte'
-    import Search from '../$components/search.svelte'
-    import Button from '../$components/button.svelte'
     import TicketNote from '../$components/notification.svelte'
-  import Ticket from './ticket.create.svelte';
 
     let loading = false
-    let query = { all: true}
+    let query = {}
     let metadata = {}
 
     onMount(getTickets)
@@ -21,6 +19,8 @@
     async function getTickets() {
 
         loading = true
+        let home= await HomesService.getHomeUser($SessionStore.userId)
+        query.homeId = home.data._id
         const response = await TicketsService.getTickets(query)
         loading = false
 
@@ -29,7 +29,6 @@
 
         TicketsStore.set(response.data.tickets)
         metadata = response.data.metadata
-
     }
 
 </script>

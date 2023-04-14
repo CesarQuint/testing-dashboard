@@ -18,7 +18,6 @@
 
     export let currentRoute = null
 
-
     async function getInformation(){
         let user = await UsersService.getUser($SessionStore.userId)
         let home = await HomesService.getHomeUser($SessionStore.userId)

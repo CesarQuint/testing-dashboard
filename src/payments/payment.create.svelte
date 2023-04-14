@@ -1,5 +1,5 @@
 <script>
-   import {TicketStore} from '../stores'
+   import {PaymentStore, TicketStore} from '../stores'
 
     import Select from '../$components/select.svelte'
     import PaymentCard from './payment.create.card.svelte'
@@ -18,7 +18,7 @@
 </div>
 
 {#if option == 'voucher'}
-    <PaymentVoucher/>
+    <PaymentVoucher on:created={()=> PaymentStore.modalClose()}/>
 {/if}
 
 {#if option == 'card'}

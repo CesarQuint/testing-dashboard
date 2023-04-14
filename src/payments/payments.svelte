@@ -1,7 +1,7 @@
 <script>
 
     import { onMount } from 'svelte'
-    import { PaymentsStore, PaymentStore, ToastStore } from '../stores'
+    import { SessionStore,PaymentsStore, PaymentStore, ToastStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
     import Utils from '../utils'
@@ -11,8 +11,10 @@
     import Button from '../$components/button.svelte'
 
     let loading = false 
-    let query = {}
+    let query = {userId:$SessionStore.userId}
     let metadata = {}
+
+    onMount(getPayments)
 
     async function getPayments() {
 
@@ -50,7 +52,7 @@
                 <td>{String(payment.home.address).substring(0,30) + "..."}</td>
                 <td>{payment.concept}</td>
                 <td>{Utils.cash(payment.amount)}</td>
-                <td><strong>{payment.status}</strong></td>
+                <td><strong>{payment.status == 'complete'?'Completado':payment.status == 'failed' ?'Fallido':'Pendiente..'}</strong></td>
                 <td>{ Utils.dateLarge(payment.created) }</td>
             </tr>
         {/each}
