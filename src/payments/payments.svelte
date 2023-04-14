@@ -1,17 +1,17 @@
 <script>
 
     import { onMount } from 'svelte'
-    import { SessionStore,PaymentsStore, PaymentStore, ToastStore } from '../stores'
+    import {SessionStore,PaymentsStore, PaymentStore, ToastStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
+    import HomeService from '../$services/homes.service'
     import Utils from '../utils'
 
     import Table from '../$components/table.svelte'
     import Search from '../$components/search.svelte'
-    import Button from '../$components/button.svelte'
 
     let loading = false 
-    let query = {userId:$SessionStore.userId}
+    let query = {}
     let metadata = {}
 
     onMount(getPayments)
@@ -19,6 +19,8 @@
     async function getPayments() {
 
         loading = true
+        const home = await HomeService.getHomeUser($SessionStore.userId)
+        query.homeId = home.data._id
         const response = await PaymentsService.getPayments(query)
         loading = false
 
@@ -30,7 +32,6 @@
 
         console.log($PaymentsStore);
     }
-
 </script>
 
 <Search on:enter={ getPayments } bind:value={ query.find } >

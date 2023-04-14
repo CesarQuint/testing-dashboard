@@ -33,8 +33,8 @@
                 <td>{$PaymentStore.reference}</td>
             </tr>
             <tr>
-                <th>Foto de pago</th>
-                <td>{$PaymentStore.paymentphoto}</td>
+                <th>Voucher de pago</th>
+                <td><a href={$PaymentStore.voucher} target="blanck">Revisa el Voucher</a></td>
             </tr>
         </tbody>
     </table>

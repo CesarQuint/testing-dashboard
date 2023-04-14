@@ -12,27 +12,24 @@
 
     let loading = false
     let data = {
-        email: ''
     }
 
-    async function userLogin() {
+    async function senEmail() {
 
         loading = true
-        const response = await UsersService.userLogin(data)
+        const response = await UsersService.sendEmail(data)
         loading = false
 
         if(response.error)
             return ToastStore.error(response.error)
 
-        Storage.setItem('session', response.data)
-
-        navigateTo('home')
+        navigateTo('/')
     }
 
 </script>
 
 
-<Form on:submit={ userLogin } { loading }>
+<Form on:submit={ senEmail } { loading }>
     <div class="columns">
         <Input bind:value={ data.email } label="Correo" icon="envelope" placeholder="Correo electronico" />
     </div>

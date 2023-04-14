@@ -4,7 +4,8 @@ export default {
     userLogin,
     getUser,
     updateUser,
-    updateUserPassword
+    updateUserPassword,
+    sendEmail
 }
 
 async function userLogin(data) {
@@ -34,6 +35,14 @@ async function updateUserPassword(userId, data) {
     return API({
         method: 'put',
         route: `/users/${ userId }/password`,
+        data
+    })
+}
+
+async function sendEmail(data){
+    return API({
+        method: 'POST',
+        route:'/users/forgot-password',
         data
     })
 }
