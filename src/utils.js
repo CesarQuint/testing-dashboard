@@ -47,5 +47,13 @@ function cash(value) {
 }
 
 function relevance(value){
-    let res = value - Date.now()
+    let numbers = value.split("T")
+    let result = numbers[0].split("-")
+
+    let current = Moment().format().split("T")
+    let fncn = current[0].split("-")
+
+    let calculo = Moment(result)
+    return calculo.diff(fncn,'days')
 }
+

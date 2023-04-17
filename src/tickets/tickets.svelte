@@ -1,5 +1,5 @@
 <script>
-
+    
     import { onMount } from 'svelte'
     import { PaymentStore,UserStore,TicketsStore, TicketStore, ToastStore,HomeStore,SessionStore } from '../stores'
 
@@ -56,7 +56,7 @@
                 <td>{ (index+1) + ( metadata.page * metadata.limit ) }</td>
                 <td>
                     <!--TODO: trabajar en una funcion que me muestre la relevanca de los tickets-->
-                    <TicketNote isLight >
+                    <TicketNote isLight color={Utils.relevance(Ticket.limited) > 12 ? 'success' :Utils.relevance(Ticket.limited) > 8 ? 'warning' :'danger' }>
                         {#if $UserStore}
                             <h1 class="title is-5">{$UserStore.name}</h1>
                         {/if }
