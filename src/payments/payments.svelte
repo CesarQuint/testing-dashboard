@@ -30,7 +30,6 @@
         PaymentsStore.set(response.data.payments)
         metadata = response.data.metadata
 
-        console.log($PaymentsStore);
     }
 </script>
 

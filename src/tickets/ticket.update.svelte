@@ -18,8 +18,6 @@
         limited: $TicketStore.limited
     }
 
-    onMount(()=>{console.log($TicketStore);})
-
     async function updateTicket() {
 
         loading = false

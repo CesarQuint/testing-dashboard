@@ -18,7 +18,6 @@
 
     async function createHome() {
 
-        console.log(data);
         loading = true
         const response = await HomeService.createHome(data)
         loading = false

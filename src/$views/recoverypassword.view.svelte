@@ -1,13 +1,9 @@
 <script>
-
-    import Form from '../$components/form.svelte'
-    import Input from '../$components/input.svelte'
-    import Button from '../$components/button.svelte'
+	import { navigateTo } from 'svelte-router-spa';
 
     import UserRecovery from '../users/user.recoverypassword.svelte'
 
     export let currentRoute = {}
-    console.log(currentRoute);
 
 </script>
 
@@ -86,10 +82,10 @@
 			<div class="card">
 					<div class="card-content">
 						<div class="content mt-4">
-							<i class="fas fa-user-circle"></i>
+							<i class="fas fa-unlock-alt"></i>
 							<h1 class="title is-4">Administrador de <span>Pagos</span></h1>
                 			<h2 class="title is-5">Cambio de Contraseña</h2>
-								<UserRecovery/>
+								<UserRecovery token={currentRoute.namedParams.token}/>
 								<div class="mt-4 is-flex">
 									<a on:click={()=>{navigateTo('/')}}>Ir al Inicio</a>
 								</div>

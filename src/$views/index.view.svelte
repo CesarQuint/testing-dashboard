@@ -1,15 +1,7 @@
 <script>
-  import { navigateTo } from 'svelte-router-spa';
-
+ 	import { navigateTo } from 'svelte-router-spa';
 
 	import UserLogin from '../users/user.login.svelte'
-
-	let logIn = true
-
-	function setChange () {
-		console.log("Llamando a setChange");
-		logIn = !logIn
-	}
 
 </script>
 

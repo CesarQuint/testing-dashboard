@@ -28,7 +28,6 @@
         HomesStore.set(response.data.homes)
         metadata = response.data.metadata
 
-        console.log($HomesStore);
     }
 
 </script>

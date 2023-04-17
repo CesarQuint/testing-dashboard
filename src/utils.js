@@ -48,5 +48,4 @@ function cash(value) {
 
 function relevance(value){
     let res = value - Date.now()
-    console.log(res);
 }

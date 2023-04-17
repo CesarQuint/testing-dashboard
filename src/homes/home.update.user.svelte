@@ -49,14 +49,12 @@
     async function getHome() {
 
         const home = $HomesStore.find(home => home.userId === $HomeStore.userId )
-        console.log($HomesStore);
 
         if(!home)
             return
 
         loading = true
         const response = await HomesService.getHome(home._id)
-        console.log(response);
         loading = false
 
         if(response.error)

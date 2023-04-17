@@ -20,9 +20,7 @@
         if(response.error)
             return ToastStore.error(response.error)
 
-        console.log(response)
         HomeStore.set(response.data)
-        console.log($HomeStore);
     }
 
     onDestroy(()=>{

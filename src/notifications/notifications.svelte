@@ -28,7 +28,7 @@
 
         NotificationsStore.set(response.data.notifications)
         metadata = response.data.metadata
-        console.log(response);
+
     }
 
 </script>

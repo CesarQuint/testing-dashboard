@@ -10,16 +10,8 @@
     import Tickets from '../tickets/tickets.svelte'
     import Modal from '../$components/modal.svelte';
 
-    import { onMount } from 'svelte';
-   
     export let currentRoute = null
 
-    onMount(getTickets)
-
-    async function getTickets(){
-        let tickets = await TicketService.getTickets()
-        console.log(tickets);
-    }
 </script>
 
 <style>

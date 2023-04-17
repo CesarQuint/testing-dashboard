@@ -25,8 +25,6 @@
         navigateTo('/')
     }
     
-    var newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.search
-    console.log(newURL);
 
 </script>
 

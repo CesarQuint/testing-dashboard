@@ -59,7 +59,7 @@ const routes = [
         component: ForgotPassword
     },
     {
-        name: 'recovery-my-password/:test',
+        name: 'recovery-my-password/:token',
         component: RecoveryPassword
     }
 ]
