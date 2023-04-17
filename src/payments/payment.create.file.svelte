@@ -15,13 +15,13 @@
 
     let loading = false
     let data = {
+        ticketId: $TicketStore._id,
         amount: $TicketStore.amount,
         concept: $TicketStore.concept,
     }
 
     async function createPayment() {
 
-        console.log(data);
 
         let home= await HomesService.getHomeUser($SessionStore.userId)
 
@@ -29,7 +29,6 @@
     
         loading = true
         const response = await PaymentsService.createPayment(data)
-        await TicketsService.updateTicket($TicketStore._id,{homes:[home.data._id]})
         loading = false
 
         if(response.error)

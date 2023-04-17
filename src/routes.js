@@ -5,6 +5,7 @@ import { SessionStore } from './stores'
 import _404View from './$views/404.view.svelte'
 import LoginView from './$views/login.view.svelte'
 import ForgotPassword from './$views/forgotpassword.view.svelte'
+import RecoveryPassword from './$views/recoverypassword.view.svelte'
 import HomeView from './$views/home.view.svelte'
 import IndexView from './$views/index.view.svelte'
 import UserView from './$views/user.view.svelte'
@@ -55,8 +56,11 @@ const routes = [
     },
     {
         name: 'forgot-my-password',
-        component: ForgotPassword,
-        onlyIf: {guard: () => !isLogin(), redirect: 'home'}
+        component: ForgotPassword
+    },
+    {
+        name: 'recovery-my-password/:test',
+        component: RecoveryPassword
     }
 ]
 
