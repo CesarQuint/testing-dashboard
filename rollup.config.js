@@ -49,6 +49,7 @@ export default {
 				HOST_API: process.env.HOST_API,
 				HOST_APP: process.env.HOST_APP,
 				BRAND: process.env.BRAND,
+				STRIPE_KEY: process.env.STRIPE_KEY,
 			})
 		}),
 

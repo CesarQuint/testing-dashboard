@@ -3,6 +3,7 @@ import API from './$api'
 export default{
     getPayments,
     createPayment,
+    createPaymentCard,
     updatePayment,
     deletePayment
 }
@@ -21,6 +22,14 @@ async function createPayment(data){
         route:'/payments',
         data,
         isForm: true
+    })
+}
+
+async function createPaymentCard(data){
+    return API({
+        method:'post',
+        route:'/payments/card',
+        data
     })
 }
 

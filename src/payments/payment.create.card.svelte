@@ -1,44 +1,41 @@
 <script>
-
-    import { createEventDispatcher } from 'svelte'
-    import { SessionStore,PaymentsStore, ToastStore } from '../stores'
+    import { TicketStore, SessionStore ,PaymentsStore, ToastStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
 
-    import Input from '../$components/input.svelte'
     import Button from '../$components/button.svelte'
     import Form from '../$components/form.svelte'
 
     import HomesService from '../$services/homes.service'
 
-    const dispatch = createEventDispatcher()
+    import Config from '../config'
+
 
     let loading = false
     let data = { }
 
-    async function createPayment() {
+    async function createPaymentCard() {
 
         let home= await HomesService.getHomeUser($SessionStore.userId)
 
         data.homeId = home.data._id
+        data.ticketId = $TicketStore._id
     
         loading = true
-        const response = await PaymentsService.createPayment(data)
+        const response = await PaymentsService.createPaymentCard(data)
         loading = false
 
         if(response.error)
             return ToastStore.error(response.error)
+        console.log(response.data);
 
-        PaymentsStore.append(response.data)
-
-        ToastStore.success('¡Pago Creado!')
-        dispatch('created')
+        window.Stripe(Config.stripeKey).redirectToCheckout({ sessionId: response.data })
     }
 
 </script>
 
-<Form>
+<Form on:submit={createPaymentCard} {loading}>
     <div slot="buttons">
-        <Button text="Continuar con el pago" icon="arrow-right" fullwidth />
+        <Button type="submit" text="Continuar con el pago" icon="arrow-right" fullwidth />
     </div>
 </Form>
