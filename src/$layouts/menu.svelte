@@ -46,6 +46,12 @@
         display: flex !important;
         justify-content: space-between;
     }
+    i{
+        margin: 0rem 0.4rem;
+    }
+    li.is-active a{
+        color:  #A38970 !important;
+    }
 </style>
 
 <!-- svelte-ignore a11y-missing-attribute -->
@@ -60,7 +66,7 @@
                         <a class="navbar-item"
                         on:click={()=>navigateTo("/home")}
                         >
-                            Administrador de Pagos
+                            Mis Pagos
                         </a>
                     </span>
                     <span class="navbar-menu is-active">
@@ -75,9 +81,9 @@
     <div class="mt-4 container">
         <div class="tabs">
             <ul>
-                <li on:click={() => navigateTo('home')} class:is-active={path === '/home'}><a>Home</a></li>
-                <li on:click={() => navigateTo('payments')} class:is-active={path === '/payments'}><a>Pagos</a></li>
-                <li on:click={() => navigateTo('my-information')} class:is-active={path === '/my-information'}><a>Mi informacion</a></li>
+                <li on:click={() => navigateTo('home')} class:is-active={path === '/home'}><a><i class="fas fa-home fa-xs"></i> Inicio</a></li>
+                <li on:click={() => navigateTo('payments')} class:is-active={path === '/payments'}><a><i class="fas fa-money-bill fa-xs"></i> Pagos</a></li>
+                <li on:click={() => navigateTo('my-information')} class:is-active={path === '/my-information'}><a><i class="fas fa-user fa-xs"></i> Mi informacion</a></li>
         </div>
         <div class="container is-fluid">
             <slot></slot>

@@ -1,7 +1,5 @@
 <script>
-    import {TicketStore,PaymentStore} from '../stores'
-
-    import TicketService from '../$services/tickets.service'
+    import {PaymentStore} from '../stores'
     
     import PaymentCreate from '../payments/payment.create.svelte'
     import Notifications from '../notifications/notifications.svelte'
@@ -25,13 +23,14 @@
 <Menu path={ currentRoute.path }>
     <div class="columns is-1">
 
-        <div class="column is-two-fifths">
-            <h1 class="title is-4">Notifications</h1>
-            <Notifications/>
-        </div>
-        <div class="column is-three-fifths">
+        <div class="column is-three-quarters">
             <h1 class="title is-4">Pagos Pendientes</h1>
             <Tickets/>
+        </div>
+
+        <div class="column is-one-quarter">
+            <h1 class="title is-4">Notifications</h1>
+            <Notifications/>
         </div>
 
     </div>

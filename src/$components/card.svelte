@@ -8,6 +8,9 @@
         margin: 0;
         text-align: center;
     }
+    i{
+        color:  #58412a !important;
+    }
 </style>
 
 <div class="card">
