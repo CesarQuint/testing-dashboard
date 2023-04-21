@@ -13,28 +13,30 @@
     <table class="table is-fullwidth">
         <tbody>
             <tr>
-                <th>Casa</th>
-                <td>{$PaymentStore.home.address}</td>  
-            </tr>
-            <tr>
                 <th>Estatus</th>
-                <td>{$PaymentStore.status}</td>
-            </tr>
-            <tr>
-                <th>Cantidad</th>
-                <td>{Utils.cash($PaymentStore.amount)}</td>
+                <td>{$PaymentStore.status == 'complete'?'Completado':$PaymentStore.status == 'failed' ?'Fallido':'Pendiente..'}</td>
             </tr>
             <tr>
                 <th>Concepto</th>
                 <td>{$PaymentStore.concept}</td>
             </tr>
             <tr>
+                <th>Cantidad</th>
+                <td>{Utils.cash($PaymentStore.amount)}</td>
+            </tr>
+            <tr>
                 <th>Referencia</th>
                 <td>{$PaymentStore.reference}</td>
             </tr>
+            {#if $PaymentStore.voucher}
+                <tr>
+                    <th>Voucher de pago</th>
+                    <td><a href={$PaymentStore.voucher} target="blanck">Revisa el Voucher</a></td>
+                </tr>
+            {/if}
             <tr>
-                <th>Voucher de pago</th>
-                <td><a href={$PaymentStore.voucher} target="blanck">Revisa el Voucher</a></td>
+                <th>Fecha de Creacion</th>
+                <td>{ Utils.dateTimeLarge($PaymentStore.created) }</td>
             </tr>
         </tbody>
     </table>

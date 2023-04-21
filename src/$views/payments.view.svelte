@@ -12,6 +12,7 @@
     import PaymentDelete from '../payments/payment.delete.svelte'
 
     export let currentRoute = null
+
 </script>
 
 <Menu path={currentRoute.path}>
@@ -20,10 +21,11 @@
 
 <Modal id="PaymentRead" title="Información" >
     <div class="dropread">
-        <Dropdown icon="cog" color="white" isRight options={[
+        <Dropdown icon="cog" color="white" isRight options={$PaymentStore.status == 'pending' ? [
             {value: 'edit', text: 'Editar', click: () => PaymentStore.modalUpdate()},
             {value: 'delete', text: 'Borrar', click: () => PaymentStore.modalDelete()},
-        ]} />
+        ]:
+        [{value: 'forbidden', text: 'No es posible hacer cambios si el estado ya no es Pendiente'}]} />
     </div>
     <PaymentRead />
 </Modal>
