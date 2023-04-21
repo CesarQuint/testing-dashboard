@@ -21,15 +21,13 @@
 		left: 0;
 	}
 
-    div.container{
-		margin-top: 5rem;	
-    }
 
 	@media(min-width: 768px){
-		div.container{
-		margin-top: 12rem;
-		}
 
+		div.container{
+			margin-top: 4rem !important;
+		}
+	
 		.is-flex{
 		display: flex;
 		flex-flow:row wrap !important;

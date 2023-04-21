@@ -23,6 +23,10 @@ $modal-card-foot-radius: 24px;
 
 $dropdown-content-z:40;
 
+html{
+    overflow-y: auto !important;
+}
+
 .field {
     position: relative !important;
 }

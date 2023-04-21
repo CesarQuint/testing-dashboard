@@ -1,3 +1,6 @@
+html {
+  overflow-y: auto !important; }
+
 .field {
   position: relative !important; }
 
@@ -44,11 +47,11 @@ td {
   background: #f1f1f1; }
 
 ::-webkit-scrollbar-thumb {
-  background: #8950F0; }
+  background: #A38970; }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #6438b6; }
+  background: #856f5b; }
 
 /* Bulma Utilities */
 .button, .input, .textarea, .select select, .file-cta,

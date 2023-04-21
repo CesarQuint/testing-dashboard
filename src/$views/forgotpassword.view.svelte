@@ -26,14 +26,12 @@
 		top: 0;
 		left: 0;
 	}
-
-    div.container{
-		margin-top: 5rem;	
-    }
+	
 
 	@media(min-width: 768px){
+
 		div.container{
-		margin-top: 12rem;
+			margin-top: 4rem !important;
 		}
 
 		.is-flex{
