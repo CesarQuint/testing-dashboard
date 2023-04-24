@@ -1,5 +1,5 @@
 <script>
-    import { TicketStore, SessionStore ,PaymentsStore, ToastStore } from '../stores'
+    import { TicketStore, SessionStore ,UserStore, ToastStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
 
@@ -12,7 +12,10 @@
 
 
     let loading = false
-    let data = { }
+    let data = { 
+        userId:$UserStore._id,
+        url:Config.hostApp
+    }
 
     async function createPaymentCard() {
 

@@ -1,7 +1,7 @@
 <script>
-
+    import Config from '../config'
     import { createEventDispatcher } from 'svelte'
-    import { SessionStore,PaymentsStore, ToastStore, TicketStore } from '../stores'
+    import { UserStore,SessionStore,PaymentsStore, ToastStore, TicketStore } from '../stores'
 
     import PaymentsService from '../$services/payments.service'
 
@@ -9,7 +9,6 @@
     import Form from '../$components/form.svelte'
 
     import HomesService from '../$services/homes.service'
-    import TicketsService from '../$services/tickets.service'
 
     const dispatch = createEventDispatcher()
 
@@ -18,6 +17,8 @@
         ticketId: $TicketStore._id,
         amount: $TicketStore.amount,
         concept: $TicketStore.concept,
+        userId:$UserStore._id,
+        url:Config.hostApp
     }
 
     async function createPayment() {
