@@ -19,12 +19,16 @@
 		left: 0;
 	}
 
-	
-	@media(min-width: 768px){
+	div.container{
+		margin-top: 10rem;
+		transition: all;
+	}
 
+	@media(min-width: 768px){
 		div.container{
-			margin-top: 4rem !important;
+		margin-top: 15rem !important;
 		}
+
 
 		.is-flex{
 		display: flex;

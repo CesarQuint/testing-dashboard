@@ -27,11 +27,14 @@
 		left: 0;
 	}
 	
+	div.container{
+		margin-top: 10rem;
+		transition: all;
+	}
 
 	@media(min-width: 768px){
-
 		div.container{
-			margin-top: 4rem !important;
+		margin-top: 15rem !important;
 		}
 
 		.is-flex{
@@ -87,7 +90,7 @@
 					<div class="card-content">
 						<div class="content mt-4">
 							<i class="fas fa-user-circle"></i>
-							<h1 class="title is-4">Administrador de <span>Pagos</span></h1>
+							<h1 class="title is-4">Mis <span>Pagos</span></h1>
                             <h2 class="title is-5">Recupera tu Contraseña</h2>
 								<UserForgotPassword/>
 								<div class="mt-4 is-flex">

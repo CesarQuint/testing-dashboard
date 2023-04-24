@@ -21,13 +21,16 @@
 		left: 0;
 	}
 
+	div.container{
+		margin-top: 10rem;
+		transition: all;
+	}
 
 	@media(min-width: 768px){
-
 		div.container{
-			margin-top: 4rem !important;
+		margin-top: 15rem !important;
 		}
-	
+
 		.is-flex{
 		display: flex;
 		flex-flow:row wrap !important;
@@ -81,7 +84,7 @@
 					<div class="card-content">
 						<div class="content mt-4">
 							<i class="fas fa-unlock-alt"></i>
-							<h1 class="title is-4">Administrador de <span>Pagos</span></h1>
+							<h1 class="title is-4">Mis <span>Pagos</span></h1>
                 			<h2 class="title is-5">Cambio de Contraseña</h2>
 								<UserRecovery token={currentRoute.namedParams.token}/>
 								<div class="mt-4 is-flex">
