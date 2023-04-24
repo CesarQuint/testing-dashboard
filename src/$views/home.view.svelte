@@ -29,7 +29,7 @@
         </div>
 
         <div class="column is-one-quarter">
-            <h1 class="title is-4">Notifications</h1>
+            <h1 class="title is-4">Notificaciones</h1>
             <Notifications/>
         </div>
 

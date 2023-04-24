@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <th>Cantidad</th>
-                <td>{$TicketStore.amount}</td>
+                <td>{Utils.cash($TicketStore.amount)}</td>
             </tr>
             <tr>
                 <th>Fecha de Creacion</th>
