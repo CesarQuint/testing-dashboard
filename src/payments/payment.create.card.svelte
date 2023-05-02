@@ -30,7 +30,7 @@
 
         if(response.error)
             return ToastStore.error(response.error)
-        console.log(response.data);
+       
 
         window.Stripe(Config.stripeKey).redirectToCheckout({ sessionId: response.data })
     }
