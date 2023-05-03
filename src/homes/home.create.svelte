@@ -39,6 +39,9 @@
             <UserSelect bind:userId={data.userId}/>
     </div>
     <div class="columns">
+        <Input bind:value={ data.alias } label="Alias" icon="tag" placeholder="Ingrese el alias de la casa"/>
+    </div>
+    <div class="columns">
         <Input bind:value={ data.street } label="Calle" icon="tag" placeholder="Ingrese la calle"/>
     </div>
     <div class="columns">

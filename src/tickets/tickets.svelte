@@ -63,8 +63,7 @@
                         <p>Concepto: <span>{Ticket.concept}</span></p>
                         <p>Tipo: <span>{Ticket.type}</span></p>
                         <p>Cantidad: <span  class="strong">{Utils.cash(Ticket.amount)}</span></p>
-                        <p>Fecha de creacion: <span>{ Utils.dateTimeLarge(Ticket.created) }</span></p>
-                        <p>Fecha de corte: <span class="strong">{Utils.dateLarge(Ticket.limited)}</span></p>
+                        <p>Fecha limite de Pago: <span class="strong">{Utils.dateLarge(Ticket.limited)}</span></p>
                     </TicketNote>
                 </td>
             </tr>

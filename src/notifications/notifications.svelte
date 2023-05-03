@@ -50,7 +50,7 @@
                     color={Notification.relevance == 'high'?'danger':Notification.relevance == 'medium' ?'warning':'success'}>
                     <h1 class="title is-5">{Notification.title}</h1>
                     <p>{Notification.description}</p>
-                    <p>Creado el: {Utils.dateTime(Notification.created)}</p>
+                    <p>Creado el: {Utils.dateLarge(Notification.created)}</p>
                     </NotificationComp>
                 </td>
             </tr>
